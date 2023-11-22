@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import productSchema, { Product } from "../../models/product";
+import productSchema, { Product } from "../../models/product.js";
 
 import dotenv from "dotenv";
-import { Creates } from "../../repositeries/common/create";
+import { Creates } from "../../repositeries/common/create.js";
 dotenv.config();
 
 export class ProductClass {

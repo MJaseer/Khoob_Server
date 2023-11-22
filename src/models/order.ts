@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema, Types } from "mongoose";
-import { IUserAddress, addressObjSchema } from "./address";
+import { IUserAddress, addressObjSchema } from "./address.js";
 
 export interface Order {
     user: Types.ObjectId;
