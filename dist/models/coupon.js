@@ -1,5 +1,7 @@
-import mongoose, { Schema } from "mongoose";
-const couponSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = require("mongoose");
+var couponSchema = new mongoose_1.Schema({
     code: { type: String, unique: true, required: true },
     title: { type: String, required: true },
     discount: { type: Number, required: true },
@@ -7,7 +9,7 @@ const couponSchema = new Schema({
     maxDiscountAmount: { type: Number, required: true },
     users: [{
             userId: {
-                type: Schema.Types.ObjectId,
+                type: mongoose_1.Schema.Types.ObjectId,
                 ref: 'User'
             }
         }],
@@ -15,5 +17,4 @@ const couponSchema = new Schema({
     createdAt: { default: Date.now() },
     image: { type: String },
 });
-export default mongoose.model("Coupon", couponSchema);
-//# sourceMappingURL=coupon.js.map
+exports.default = mongoose_1.default.model("Coupon", couponSchema);

@@ -1,12 +1,13 @@
-import mongoose, { Schema } from "mongoose";
-const wishlistSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = require("mongoose");
+var wishlistSchema = new mongoose_1.Schema({
     products: [{
             productId: {
-                type: Schema.Types.ObjectId,
+                type: mongoose_1.Schema.Types.ObjectId,
                 ref: 'Product',
             },
         }],
-    user: { type: Schema.Types.ObjectId }
+    user: { type: mongoose_1.Schema.Types.ObjectId }
 });
-export default mongoose.model("Wishlist", wishlistSchema);
-//# sourceMappingURL=wishlist.js.map
+exports.default = mongoose_1.default.model("Wishlist", wishlistSchema);

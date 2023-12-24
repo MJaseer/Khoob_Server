@@ -1,10 +1,11 @@
-import { Router } from "express";
-import { UserClass } from "../../controllers/user/user.js";
-import { validation } from "../../middlewares/validation/yup.js";
-const user = new UserClass();
-const validator = new validation();
-const router = Router();
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var user_js_1 = require("../../controllers/user/user.js");
+var yup_js_1 = require("../../middlewares/validation/yup.js");
+var user = new user_js_1.UserClass();
+var validator = new yup_js_1.validation();
+var router = (0, express_1.Router)();
 router.post('/register', validator.registerValidation, user.userRegister);
 router.post('/login', validator.loginValidation, user.userLogin);
-export default router;
-//# sourceMappingURL=user-router.js.map
+exports.default = router;

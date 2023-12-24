@@ -1,5 +1,7 @@
-import mongoose, { Schema } from "mongoose";
-const productSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = require("mongoose");
+var productSchema = new mongoose_1.Schema({
     name: {
         type: String,
         required: true
@@ -25,16 +27,15 @@ const productSchema = new Schema({
         required: true
     },
     category: {
-        type: Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         ref: 'Category',
         required: true
     },
     reviews: {
-        type: Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         ref: 'Reviews',
     },
 }, {
     timestamps: true
 });
-export default mongoose.model("Product", productSchema);
-//# sourceMappingURL=product.js.map
+exports.default = mongoose_1.default.model("Product", productSchema);

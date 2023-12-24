@@ -1,5 +1,8 @@
-import mongoose, { Schema } from "mongoose";
-export const addressObjSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.addressObjSchema = void 0;
+var mongoose_1 = require("mongoose");
+exports.addressObjSchema = new mongoose_1.Schema({
     street: String,
     city: String,
     state: String,
@@ -8,15 +11,14 @@ export const addressObjSchema = new Schema({
     landMark: String,
     createdAt: { default: Date.now() }
 });
-const addressSchema = new Schema({
+var addressSchema = new mongoose_1.Schema({
     userId: {
-        type: Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
     },
-    savedArray: [addressObjSchema],
+    savedArray: [exports.addressObjSchema],
 }, {
     timestamps: true
 });
-export default mongoose.model("Address", addressSchema);
-//# sourceMappingURL=address.js.map
+exports.default = mongoose_1.default.model("Address", addressSchema);

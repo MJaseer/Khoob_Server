@@ -1,6 +1,9 @@
-import * as yup from 'yup';
-export class Validator {
-    constructor() {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Validator = void 0;
+var yup = require("yup");
+var Validator = /** @class */ (function () {
+    function Validator() {
         this.phoneRegExp = /^\d{10}$/;
         this.passwordSchema = yup.string().min(8, 'Password must be at least 8 characters')
             .max(20, 'Password cannot be longer than 20 characters')
@@ -24,5 +27,6 @@ export class Validator {
             .min(3, 'Product description must be atleast 3 characters long')
             .max(250, 'Product description cannot be longer than 250 characters');
     }
-}
-//# sourceMappingURL=yupValidators.js.map
+    return Validator;
+}());
+exports.Validator = Validator;

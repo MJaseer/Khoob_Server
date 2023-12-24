@@ -1,8 +1,10 @@
-import mongoose, { Schema } from "mongoose";
-const categorySchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = require("mongoose");
+var categorySchema = new mongoose_1.Schema({
     products: [{
             productId: {
-                type: Schema.Types.ObjectId,
+                type: mongoose_1.Schema.Types.ObjectId,
                 ref: 'Product',
             },
         }],
@@ -10,5 +12,4 @@ const categorySchema = new Schema({
     createdAt: { default: Date.now() },
     image: { type: String },
 });
-export default mongoose.model("Category", categorySchema);
-//# sourceMappingURL=category.js.map
+exports.default = mongoose_1.default.model("Category", categorySchema);

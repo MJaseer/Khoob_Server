@@ -1,13 +1,15 @@
-import mongoose, { Schema } from "mongoose";
-const cartSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = require("mongoose");
+var cartSchema = new mongoose_1.Schema({
     user: {
-        type: Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
     },
     product: [{
             productDetail: {
-                type: Schema.Types.ObjectId,
+                type: mongoose_1.Schema.Types.ObjectId,
                 ref: 'Product',
                 required: true
             },
@@ -16,5 +18,4 @@ const cartSchema = new Schema({
         }],
     createdAt: { default: Date.now() }
 });
-export default mongoose.model("cart", cartSchema);
-//# sourceMappingURL=cart.js.map
+exports.default = mongoose_1.default.model("cart", cartSchema);

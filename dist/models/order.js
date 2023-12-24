@@ -1,14 +1,16 @@
-import mongoose, { Schema } from "mongoose";
-import { addressObjSchema } from "./address.js";
-const orderSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = require("mongoose");
+var address_js_1 = require("./address.js");
+var orderSchema = new mongoose_1.Schema({
     user: {
-        type: Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
     },
     product: [{
             productDetail: {
-                type: Schema.Types.ObjectId,
+                type: mongoose_1.Schema.Types.ObjectId,
                 ref: 'Product',
                 required: true
             },
@@ -24,7 +26,7 @@ const orderSchema = new Schema({
         required: true,
     },
     address: {
-        type: addressObjSchema
+        type: address_js_1.addressObjSchema
     },
     paymentStatus: { type: Boolean, default: false },
     paymentMethod: { type: String },
@@ -32,5 +34,4 @@ const orderSchema = new Schema({
     cancelReason: { type: String },
     createdAt: { default: Date.now() }
 });
-export default mongoose.model("Order", orderSchema);
-//# sourceMappingURL=order.js.map
+exports.default = mongoose_1.default.model("Order", orderSchema);
